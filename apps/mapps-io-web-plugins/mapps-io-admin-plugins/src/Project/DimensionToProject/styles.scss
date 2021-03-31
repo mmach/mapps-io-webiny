@@ -1,0 +1,13 @@
+#dimensions {
+    .rt-td {
+        overflow: visible !important;
+
+        justify-content: center;
+        display: flex;
+        /* align-content: center; */
+        align-items: center;
+    }
+    .form-control div[class^="theme_content"] {
+        padding: 0px;
+    }
+}

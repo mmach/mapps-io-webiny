@@ -1,0 +1,21 @@
+.rheostat button
+{
+    padding:7px;
+    border-radius:30px;
+    border-width: 1px;
+    cursor:pointer;
+    margin-left:-7px;
+    margin-top:-5px
+}
+.rheostat .DefaultProgressBar_progressBar 
+{
+    height: 4px;
+    background-color: #ddd;
+    position: absolute;
+    z-index: -1;
+}
+.rheostat
+{
+    position:relative;
+    width:100%
+}

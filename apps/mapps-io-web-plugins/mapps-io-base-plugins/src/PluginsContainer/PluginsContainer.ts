@@ -1,0 +1,108 @@
+import { MappsPlugin } from "./types";
+import uniqid from "uniqid";
+
+const isOptionsObject = item => item && !Array.isArray(item) && !item.type && !item.name;
+const normalizeArgs = args => {
+    let options = {};
+
+    // Check if last item in the plugins array is actually an options object.
+    if (isOptionsObject(args[args.length - 1])) {
+        [options] = args.splice(-1, 1);
+    }
+
+    return [args, options];
+};
+
+const assign = (plugins: any, options, target: Object): void => {
+    for (let i = 0; i < plugins.length; i++) {
+        const plugin = plugins[i];
+        if (Array.isArray(plugin)) {
+            assign(plugin, options, target);
+            continue;
+        }
+
+        let name = plugin._name || plugin.name;
+        if (!name) {
+            plugin.name = name = uniqid(plugin.type + "-");
+        }
+
+        // If skip existing was set to true, and a plugin with the same name was already registered, skip registration.
+        if (!options.skipExisting || !target[name]) {
+            target[name] = plugin;
+            plugin.init && plugin.init();
+        }
+    }
+};
+
+export class MappsPluginsContainer {
+    private plugins: Record<string, MappsPlugin> = {};
+    private _byTypeCache: Record<string, MappsPlugin[]> = {};
+    private _byParentCache: Record<string, MappsPlugin[]> = {};
+
+    constructor(...args) {
+        this.register(...args);
+    }
+
+    public byName<T extends MappsPlugin = MappsPlugin>(name: string): T {
+        return this.plugins[name] as T;
+    }
+
+    public byType<T extends MappsPlugin>(type: string): T[] {
+        if (this._byTypeCache[type]) {
+            return Array.from(this._byTypeCache[type]) as T[];
+        }
+        const plugins = this.findByType<T>(type);
+        this._byTypeCache[type] = plugins;
+        return Array.from(plugins);
+    }
+    public byParent<T extends MappsPlugin>(parent: string): T[] {
+        if (this._byParentCache[parent]) {
+            return Array.from(this._byParentCache[parent]) as T[];
+        }
+        const plugins = this.findByParent<T>(parent);
+        this._byParentCache[parent] = plugins;
+        return Array.from(plugins);
+    }
+
+    public atLeastOneByType<T extends MappsPlugin>(type: string): T[] {
+        const list = this.byType<T>(type);
+        if (list.length === 0) {
+            throw new Error(`There are no plugins by type "${type}".`);
+        }
+        return list;
+    }
+
+    public oneByType<T extends MappsPlugin>(type: string): T {
+        const list = this.atLeastOneByType<T>(type);
+        if (list.length > 1) {
+            throw new Error(
+                `There is a requirement for plugin of type "${type}" to be only one registered.`
+            );
+        }
+        return list[0];
+    }
+
+    public all<T extends MappsPlugin>(): T[] {
+        return Object.values(this.plugins) as T[];
+    }
+
+    public register(...args: any): void {
+        // reset the cache when adding new plugins
+        this._byTypeCache = {};
+        const [plugins, options] = normalizeArgs(args);
+        assign(plugins, options, this.plugins);
+    }
+
+    public unregister(name: string): void {
+        // reset the cache when removing a plugin
+        this._byTypeCache = {};
+        delete this.plugins[name];
+    }
+
+    private findByType<T extends MappsPlugin>(type: string): T[] {
+        return Object.values(this.plugins).filter((pl: MappsPlugin) => pl.type === type) as T[];
+    }
+    private findByParent<T extends MappsPlugin>(parent: string): T[] {
+        return Object.values(this.plugins).filter((pl: MappsPlugin) => pl.parent === parent) as T[];
+    }
+}

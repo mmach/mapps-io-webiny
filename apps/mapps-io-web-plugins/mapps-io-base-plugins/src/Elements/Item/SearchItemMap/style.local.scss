@@ -1,0 +1,171 @@
+
+.circleBorder {
+  stroke: #444;
+}
+
+.map-button-user {
+  position: absolute !important;
+  width: 60px;
+  height: 60px;
+  top: 3vh;
+
+  right: 18px;
+  background-color: rgba(60, 60, 60, 0.85);
+  border-radius: 100px;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 8px;
+}
+.map-button-group {
+  position: absolute !important;
+  width: 60px;
+  height: 60px;
+  top: 50%;
+
+  right: 18px;
+  background-color: rgba(60, 60, 60, 0.85);
+  border-radius: 100px;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 6px;
+  padding-left: 1px;
+}
+
+.map-button-user_active,
+.map-button-group_active {
+  background-color: rgba(0, 0, 0, 0.85) !important ;
+}
+.map-button-user_active:hover .map-button-group:hover {
+  background-color: rgba(40, 40, 40, 0.85) !important;
+}
+.map-button-user:hover {
+  background-color: rgba(60, 60, 60, 0.7);
+}
+
+.map-distance-label {
+  background-color: rgba(60, 60, 60, 0.85) !important;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.map-distance-left-btn {
+  background-color: rgba(60, 60, 60, 0.85) !important;
+  border-radius: 100px 0px 0px 100px;
+  width: 30px;
+  padding-top: 15px;
+}
+.map-distance-left-btn:hover,
+.map-distance-right-btn:hover {
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  background-color: rgba(60, 60, 60, 0.7) !important;
+}
+.map-distance-right-btn {
+  background-color: rgba(60, 60, 60, 0.85) !important;
+  border-radius: 0px 100px 100px 0px;
+  width: 30px;
+  padding-top: 15px;
+}
+.map-distance-btns {
+  z-index: 1000;
+  position: absolute !important;
+  width: 90px;
+  height: 80px;
+  top: 88%;
+  text-align: center;
+  right: 18px;
+}
+.pin_hide  {
+  animation: hide_pin 1s ease ;
+}     
+   
+@keyframes hide_pin{
+  0% { opacity:1}
+
+  100% {  opacity:0}
+
+} 
+
+@media only screen and (min-height: 850px) {
+  .map-button-user {
+    top: 3vh;
+  }
+  .map-distance-btns {
+    top: 92%;
+  }
+}
+@media only screen and (max-height: 400px) {
+  .map-button-user {
+    top: 3vh;
+  }
+  .map-distance-btns {
+    top: 75%;
+  }
+}
+.map-button-user-icon {
+  margin-top: 2px;
+  font-size: 2.5rem;
+
+  color: #ddd;
+}
+.map-button-user-icon:hover {
+  color: #ddd;
+}
+
+.bm-icon
+{
+  color:#ddd
+}
+/*
+  Sidebar wrapper styles
+  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
+
+.leaflet-popup-content {
+  margin: 0px !important ;
+}
+.leaflet-popup-tip-container {
+  margin-top: -5px !important;
+}
+.leaflet-popup-tip {
+  box-shadow: 0 0px 0px;
+}
+.leaflet-tooltip {
+  padding: 0 !important;
+  animation: show_pin 1s ease ;
+  opacity:0;
+    .MuiCardMedia-img{
+      object-fit:contain !important
+    }
+}
+
+@keyframes show_pin{
+  0% { opacity:0 !important}
+
+  100% {  opacity:1 !important}
+
+} 
+
+.leaflet-popup-content-wrapper {
+  border-radius: 0px !important;
+  padding: 1px;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.pin_hover {
+  transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transform: translateY(0px);
+  -webkit-transform: translateY(0);
+  -o-transform: translateY(0);
+  -moz-transform: translateY(0);
+}
+
+.leaflet-interactive {
+  cursor: default !important;
+}
+.leaflet-marker-icon {
+  cursor: pointer !important;
+}

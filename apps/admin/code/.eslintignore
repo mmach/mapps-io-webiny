@@ -1,0 +1,6 @@
+**/node_modules
+**/dest
+**/__tests__
+scripts
+dest
+build

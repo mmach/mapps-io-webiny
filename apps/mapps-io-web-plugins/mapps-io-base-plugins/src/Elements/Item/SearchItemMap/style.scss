@@ -1,0 +1,37 @@
+
+.pin_hide  {
+  animation: hide_pin 1s ease ;
+}     
+   
+@keyframes hide_pin{
+  0% { opacity:1}
+
+  100% {  opacity:0}
+
+} 
+
+
+.leaflet-active-tooltip
+{
+  display:none !important ;
+
+}
+
+.leaflet-control-attribution
+{
+  display:none !important 
+}
+.leaflet-popup-content p {
+  margin: 0px !important ;
+}
+.leaflet-popup
+{
+  .leaflet-popup-close-button{
+    display:none
+  }
+ 
+  .MuiCardMedia-img
+  {
+    object-fit: contain !important;
+  }
+}
