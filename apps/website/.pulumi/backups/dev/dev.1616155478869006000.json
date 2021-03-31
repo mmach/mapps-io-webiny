@@ -1,0 +1,1527 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "dev",
+        "latest": {
+            "manifest": {
+                "time": "2021-03-19T13:04:38.3173172+01:00",
+                "magic": "37fb8e6c2af6b5554ae3fed2b443e52bb0f9e2aaeaca311e6cdd59f80c44b33a",
+                "version": "2.23.1"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:qvmuLs4eV6s=:v1:ReDp27x1IZ9uPNJ3:m8ed9hTci9PmlqwDL1RY901mQy0ONQ=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "outputs": {
+                        "appId": "E1CPTEQCDQ02K",
+                        "appStorage": "app-6016a1e",
+                        "appUrl": "https://d3ibc17ywfs9m6.cloudfront.net",
+                        "deliveryId": "E3POTU60R18JMH",
+                        "deliveryStorage": "delivery-00906ab",
+                        "deliveryUrl": "https://d2p2zdapj3zp2n.cloudfront.net"
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0",
+                    "custom": true,
+                    "id": "a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "type": "pulumi:providers:aws",
+                    "inputs": {
+                        "version": "3.33.0"
+                    },
+                    "outputs": {
+                        "version": "3.33.0"
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::delivery",
+                    "custom": true,
+                    "id": "delivery-00906ab",
+                    "type": "aws:s3/bucket:Bucket",
+                    "inputs": {
+                        "__defaults": [
+                            "bucket"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "delivery-00906ab",
+                        "forceDestroy": true,
+                        "website": {
+                            "__defaults": [],
+                            "errorDocument": "_NOT_FOUND_PAGE_/index.html",
+                            "indexDocument": "index.html"
+                        }
+                    },
+                    "outputs": {
+                        "accelerationStatus": "",
+                        "acl": "public-read",
+                        "arn": "arn:aws:s3:::delivery-00906ab",
+                        "bucket": "delivery-00906ab",
+                        "bucketDomainName": "delivery-00906ab.s3.amazonaws.com",
+                        "bucketRegionalDomainName": "delivery-00906ab.s3.eu-central-1.amazonaws.com",
+                        "corsRules": [],
+                        "forceDestroy": true,
+                        "grants": [],
+                        "hostedZoneId": "Z21DNDUVLTQW6Q",
+                        "id": "delivery-00906ab",
+                        "lifecycleRules": [],
+                        "loggings": [],
+                        "objectLockConfiguration": null,
+                        "region": "eu-central-1",
+                        "replicationConfiguration": null,
+                        "requestPayer": "BucketOwner",
+                        "serverSideEncryptionConfiguration": null,
+                        "tags": {},
+                        "versioning": {
+                            "enabled": false,
+                            "mfaDelete": false
+                        },
+                        "website": {
+                            "errorDocument": "_NOT_FOUND_PAGE_/index.html",
+                            "indexDocument": "index.html",
+                            "redirectAllRequestsTo": "",
+                            "routingRules": ""
+                        },
+                        "websiteDomain": "s3-website.eu-central-1.amazonaws.com",
+                        "websiteEndpoint": "delivery-00906ab.s3-website.eu-central-1.amazonaws.com"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "forceDestroy": null,
+                        "website": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                    "custom": true,
+                    "id": "app-6016a1e",
+                    "type": "aws:s3/bucket:Bucket",
+                    "inputs": {
+                        "__defaults": [
+                            "bucket"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "forceDestroy": true,
+                        "website": {
+                            "__defaults": [],
+                            "errorDocument": "index.html",
+                            "indexDocument": "index.html"
+                        }
+                    },
+                    "outputs": {
+                        "accelerationStatus": "",
+                        "acl": "public-read",
+                        "arn": "arn:aws:s3:::app-6016a1e",
+                        "bucket": "app-6016a1e",
+                        "bucketDomainName": "app-6016a1e.s3.amazonaws.com",
+                        "bucketRegionalDomainName": "app-6016a1e.s3.eu-central-1.amazonaws.com",
+                        "corsRules": [],
+                        "forceDestroy": true,
+                        "grants": [],
+                        "hostedZoneId": "Z21DNDUVLTQW6Q",
+                        "id": "app-6016a1e",
+                        "lifecycleRules": [],
+                        "loggings": [],
+                        "objectLockConfiguration": null,
+                        "region": "eu-central-1",
+                        "replicationConfiguration": null,
+                        "requestPayer": "BucketOwner",
+                        "serverSideEncryptionConfiguration": null,
+                        "tags": {},
+                        "versioning": {
+                            "enabled": false,
+                            "mfaDelete": false
+                        },
+                        "website": {
+                            "errorDocument": "index.html",
+                            "indexDocument": "index.html",
+                            "redirectAllRequestsTo": "",
+                            "routingRules": ""
+                        },
+                        "websiteDomain": "s3-website.eu-central-1.amazonaws.com",
+                        "websiteEndpoint": "app-6016a1e.s3-website.eu-central-1.amazonaws.com"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "forceDestroy": null,
+                        "website": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket$aws:s3/bucketObject:BucketObject::static/media/round-navigate_next-24px.e4cc18fb.svg",
+                    "custom": true,
+                    "id": "static/media/round-navigate_next-24px.e4cc18fb.svg",
+                    "type": "aws:s3/bucketObject:BucketObject",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDestroy"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "cacheControl": "max-age=31536000",
+                        "contentType": "image/svg+xml",
+                        "forceDestroy": false,
+                        "key": "static/media/round-navigate_next-24px.e4cc18fb.svg",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "924801fe6f40ab3f964078ca9cd97a72474f045af28c45daaa2c5f2db0446dcb",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/media/round-navigate_next-24px.e4cc18fb.svg"
+                        }
+                    },
+                    "outputs": {
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "bucketKeyEnabled": false,
+                        "cacheControl": "max-age=31536000",
+                        "contentDisposition": "",
+                        "contentEncoding": "",
+                        "contentLanguage": "",
+                        "contentType": "image/svg+xml",
+                        "etag": "e4cc18fba33e88b7f56e9414dd5d6577",
+                        "forceDestroy": false,
+                        "id": "static/media/round-navigate_next-24px.e4cc18fb.svg",
+                        "key": "static/media/round-navigate_next-24px.e4cc18fb.svg",
+                        "metadata": {},
+                        "objectLockLegalHoldStatus": "",
+                        "objectLockMode": "",
+                        "objectLockRetainUntilDate": "",
+                        "serverSideEncryption": "",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "924801fe6f40ab3f964078ca9cd97a72474f045af28c45daaa2c5f2db0446dcb",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/media/round-navigate_next-24px.e4cc18fb.svg"
+                        },
+                        "storageClass": "STANDARD",
+                        "tags": {},
+                        "versionId": "",
+                        "websiteRedirect": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "bucket": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "cacheControl": null,
+                        "contentType": null,
+                        "key": null,
+                        "source": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket$aws:s3/bucketObject:BucketObject::static/media/facebook-square-brands.9d8bf2ee.svg",
+                    "custom": true,
+                    "id": "static/media/facebook-square-brands.9d8bf2ee.svg",
+                    "type": "aws:s3/bucketObject:BucketObject",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDestroy"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "cacheControl": "max-age=31536000",
+                        "contentType": "image/svg+xml",
+                        "forceDestroy": false,
+                        "key": "static/media/facebook-square-brands.9d8bf2ee.svg",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "90d8bb5a6442d7bce05db5e33ddccfbc3bc494c53fb7db7c4dc67c7ca34386f5",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/media/facebook-square-brands.9d8bf2ee.svg"
+                        }
+                    },
+                    "outputs": {
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "bucketKeyEnabled": false,
+                        "cacheControl": "max-age=31536000",
+                        "contentDisposition": "",
+                        "contentEncoding": "",
+                        "contentLanguage": "",
+                        "contentType": "image/svg+xml",
+                        "etag": "9d8bf2ee9afe4f31eee6ae26ef5213d1",
+                        "forceDestroy": false,
+                        "id": "static/media/facebook-square-brands.9d8bf2ee.svg",
+                        "key": "static/media/facebook-square-brands.9d8bf2ee.svg",
+                        "metadata": {},
+                        "objectLockLegalHoldStatus": "",
+                        "objectLockMode": "",
+                        "objectLockRetainUntilDate": "",
+                        "serverSideEncryption": "",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "90d8bb5a6442d7bce05db5e33ddccfbc3bc494c53fb7db7c4dc67c7ca34386f5",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/media/facebook-square-brands.9d8bf2ee.svg"
+                        },
+                        "storageClass": "STANDARD",
+                        "tags": {},
+                        "versionId": "",
+                        "websiteRedirect": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "bucket": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "cacheControl": null,
+                        "contentType": null,
+                        "key": null,
+                        "source": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket$aws:s3/bucketObject:BucketObject::static/js/runtime-main.3374ac37.js",
+                    "custom": true,
+                    "id": "static/js/runtime-main.3374ac37.js",
+                    "type": "aws:s3/bucketObject:BucketObject",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDestroy"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "cacheControl": "max-age=31536000",
+                        "contentType": "application/javascript",
+                        "forceDestroy": false,
+                        "key": "static/js/runtime-main.3374ac37.js",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "ab7e94390b613f8575f925364f2b9adaed6bfe1ace1ef25515f45fc82b1376a8",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/js/runtime-main.3374ac37.js"
+                        }
+                    },
+                    "outputs": {
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "bucketKeyEnabled": false,
+                        "cacheControl": "max-age=31536000",
+                        "contentDisposition": "",
+                        "contentEncoding": "",
+                        "contentLanguage": "",
+                        "contentType": "application/javascript",
+                        "etag": "85a1b4eff0e4569e84d95bed47af8b7f",
+                        "forceDestroy": false,
+                        "id": "static/js/runtime-main.3374ac37.js",
+                        "key": "static/js/runtime-main.3374ac37.js",
+                        "metadata": {},
+                        "objectLockLegalHoldStatus": "",
+                        "objectLockMode": "",
+                        "objectLockRetainUntilDate": "",
+                        "serverSideEncryption": "",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "ab7e94390b613f8575f925364f2b9adaed6bfe1ace1ef25515f45fc82b1376a8",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/js/runtime-main.3374ac37.js"
+                        },
+                        "storageClass": "STANDARD",
+                        "tags": {},
+                        "versionId": "",
+                        "websiteRedirect": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "bucket": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "cacheControl": null,
+                        "contentType": null,
+                        "key": null,
+                        "source": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket$aws:s3/bucketObject:BucketObject::asset-manifest.json",
+                    "custom": true,
+                    "id": "asset-manifest.json",
+                    "type": "aws:s3/bucketObject:BucketObject",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDestroy"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "cacheControl": "max-age=31536000",
+                        "contentType": "application/json",
+                        "forceDestroy": false,
+                        "key": "asset-manifest.json",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "388f3de82c187d2d6ee03f9322de907db2de040c872516df2f655cae31c47aff",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/asset-manifest.json"
+                        }
+                    },
+                    "outputs": {
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "bucketKeyEnabled": false,
+                        "cacheControl": "max-age=31536000",
+                        "contentDisposition": "",
+                        "contentEncoding": "",
+                        "contentLanguage": "",
+                        "contentType": "application/json",
+                        "etag": "a7fd4f4ecee50bd6a5f50037c54833f0",
+                        "forceDestroy": false,
+                        "id": "asset-manifest.json",
+                        "key": "asset-manifest.json",
+                        "metadata": {},
+                        "objectLockLegalHoldStatus": "",
+                        "objectLockMode": "",
+                        "objectLockRetainUntilDate": "",
+                        "serverSideEncryption": "",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "388f3de82c187d2d6ee03f9322de907db2de040c872516df2f655cae31c47aff",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/asset-manifest.json"
+                        },
+                        "storageClass": "STANDARD",
+                        "tags": {},
+                        "versionId": "",
+                        "websiteRedirect": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "bucket": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "cacheControl": null,
+                        "contentType": null,
+                        "key": null,
+                        "source": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket$aws:s3/bucketObject:BucketObject::static/media/twitter-square-brands.572e1c09.svg",
+                    "custom": true,
+                    "id": "static/media/twitter-square-brands.572e1c09.svg",
+                    "type": "aws:s3/bucketObject:BucketObject",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDestroy"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "cacheControl": "max-age=31536000",
+                        "contentType": "image/svg+xml",
+                        "forceDestroy": false,
+                        "key": "static/media/twitter-square-brands.572e1c09.svg",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "18f5bdba124d2ae668eee101481acecfe409698ad8f37447d555b987da8571bc",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/media/twitter-square-brands.572e1c09.svg"
+                        }
+                    },
+                    "outputs": {
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "bucketKeyEnabled": false,
+                        "cacheControl": "max-age=31536000",
+                        "contentDisposition": "",
+                        "contentEncoding": "",
+                        "contentLanguage": "",
+                        "contentType": "image/svg+xml",
+                        "etag": "572e1c0940c708c3be4635452d9e3b42",
+                        "forceDestroy": false,
+                        "id": "static/media/twitter-square-brands.572e1c09.svg",
+                        "key": "static/media/twitter-square-brands.572e1c09.svg",
+                        "metadata": {},
+                        "objectLockLegalHoldStatus": "",
+                        "objectLockMode": "",
+                        "objectLockRetainUntilDate": "",
+                        "serverSideEncryption": "",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "18f5bdba124d2ae668eee101481acecfe409698ad8f37447d555b987da8571bc",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/media/twitter-square-brands.572e1c09.svg"
+                        },
+                        "storageClass": "STANDARD",
+                        "tags": {},
+                        "versionId": "",
+                        "websiteRedirect": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "bucket": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "cacheControl": null,
+                        "contentType": null,
+                        "key": null,
+                        "source": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket$aws:s3/bucketObject:BucketObject::static/media/round-navigate_before-24px.98551094.svg",
+                    "custom": true,
+                    "id": "static/media/round-navigate_before-24px.98551094.svg",
+                    "type": "aws:s3/bucketObject:BucketObject",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDestroy"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "cacheControl": "max-age=31536000",
+                        "contentType": "image/svg+xml",
+                        "forceDestroy": false,
+                        "key": "static/media/round-navigate_before-24px.98551094.svg",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "2800378bd7d080aa7906332dd0c2a653219ae353c974d7f58ec531d72514af52",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/media/round-navigate_before-24px.98551094.svg"
+                        }
+                    },
+                    "outputs": {
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "bucketKeyEnabled": false,
+                        "cacheControl": "max-age=31536000",
+                        "contentDisposition": "",
+                        "contentEncoding": "",
+                        "contentLanguage": "",
+                        "contentType": "image/svg+xml",
+                        "etag": "985510947133c7f2c84e4dc11c365f5d",
+                        "forceDestroy": false,
+                        "id": "static/media/round-navigate_before-24px.98551094.svg",
+                        "key": "static/media/round-navigate_before-24px.98551094.svg",
+                        "metadata": {},
+                        "objectLockLegalHoldStatus": "",
+                        "objectLockMode": "",
+                        "objectLockRetainUntilDate": "",
+                        "serverSideEncryption": "",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "2800378bd7d080aa7906332dd0c2a653219ae353c974d7f58ec531d72514af52",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/media/round-navigate_before-24px.98551094.svg"
+                        },
+                        "storageClass": "STANDARD",
+                        "tags": {},
+                        "versionId": "",
+                        "websiteRedirect": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "bucket": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "cacheControl": null,
+                        "contentType": null,
+                        "key": null,
+                        "source": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket$aws:s3/bucketObject:BucketObject::static/css/main.9bc462d2.chunk.css",
+                    "custom": true,
+                    "id": "static/css/main.9bc462d2.chunk.css",
+                    "type": "aws:s3/bucketObject:BucketObject",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDestroy"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "cacheControl": "max-age=31536000",
+                        "contentType": "text/css",
+                        "forceDestroy": false,
+                        "key": "static/css/main.9bc462d2.chunk.css",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "6628c393d960eaada0da32dc7a471a7b33bc34e875146941c72b9923932288e0",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/css/main.9bc462d2.chunk.css"
+                        }
+                    },
+                    "outputs": {
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "bucketKeyEnabled": false,
+                        "cacheControl": "max-age=31536000",
+                        "contentDisposition": "",
+                        "contentEncoding": "",
+                        "contentLanguage": "",
+                        "contentType": "text/css",
+                        "etag": "e35388a56253aa2b43ca8662733d7d78",
+                        "forceDestroy": false,
+                        "id": "static/css/main.9bc462d2.chunk.css",
+                        "key": "static/css/main.9bc462d2.chunk.css",
+                        "metadata": {},
+                        "objectLockLegalHoldStatus": "",
+                        "objectLockMode": "",
+                        "objectLockRetainUntilDate": "",
+                        "serverSideEncryption": "",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "6628c393d960eaada0da32dc7a471a7b33bc34e875146941c72b9923932288e0",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/css/main.9bc462d2.chunk.css"
+                        },
+                        "storageClass": "STANDARD",
+                        "tags": {},
+                        "versionId": "",
+                        "websiteRedirect": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "bucket": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "cacheControl": null,
+                        "contentType": null,
+                        "key": null,
+                        "source": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket$aws:s3/bucketObject:BucketObject::index.html",
+                    "custom": true,
+                    "id": "index.html",
+                    "type": "aws:s3/bucketObject:BucketObject",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDestroy"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "cacheControl": "max-age=31536000",
+                        "contentType": "text/html",
+                        "forceDestroy": false,
+                        "key": "index.html",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "26dc694c61464e75e507a92048d66019786b3ad82c5be14eb9b6842d960df822",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/index.html"
+                        }
+                    },
+                    "outputs": {
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "bucketKeyEnabled": false,
+                        "cacheControl": "max-age=31536000",
+                        "contentDisposition": "",
+                        "contentEncoding": "",
+                        "contentLanguage": "",
+                        "contentType": "text/html",
+                        "etag": "bab7db8062a0a4c55da88845fada9c61",
+                        "forceDestroy": false,
+                        "id": "index.html",
+                        "key": "index.html",
+                        "metadata": {},
+                        "objectLockLegalHoldStatus": "",
+                        "objectLockMode": "",
+                        "objectLockRetainUntilDate": "",
+                        "serverSideEncryption": "",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "26dc694c61464e75e507a92048d66019786b3ad82c5be14eb9b6842d960df822",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/index.html"
+                        },
+                        "storageClass": "STANDARD",
+                        "tags": {},
+                        "versionId": "",
+                        "websiteRedirect": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "bucket": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "cacheControl": null,
+                        "contentType": null,
+                        "key": null,
+                        "source": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket$aws:s3/bucketObject:BucketObject::static/media/instagram-brands.61987442.svg",
+                    "custom": true,
+                    "id": "static/media/instagram-brands.61987442.svg",
+                    "type": "aws:s3/bucketObject:BucketObject",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDestroy"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "cacheControl": "max-age=31536000",
+                        "contentType": "image/svg+xml",
+                        "forceDestroy": false,
+                        "key": "static/media/instagram-brands.61987442.svg",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "4db873f6db190083fb8cb6477614a55ac5826e766550bdfda8217535671e3897",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/media/instagram-brands.61987442.svg"
+                        }
+                    },
+                    "outputs": {
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "bucketKeyEnabled": false,
+                        "cacheControl": "max-age=31536000",
+                        "contentDisposition": "",
+                        "contentEncoding": "",
+                        "contentLanguage": "",
+                        "contentType": "image/svg+xml",
+                        "etag": "61987442ac29655148e23f19a1c9370a",
+                        "forceDestroy": false,
+                        "id": "static/media/instagram-brands.61987442.svg",
+                        "key": "static/media/instagram-brands.61987442.svg",
+                        "metadata": {},
+                        "objectLockLegalHoldStatus": "",
+                        "objectLockMode": "",
+                        "objectLockRetainUntilDate": "",
+                        "serverSideEncryption": "",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "4db873f6db190083fb8cb6477614a55ac5826e766550bdfda8217535671e3897",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/media/instagram-brands.61987442.svg"
+                        },
+                        "storageClass": "STANDARD",
+                        "tags": {},
+                        "versionId": "",
+                        "websiteRedirect": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "bucket": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "cacheControl": null,
+                        "contentType": null,
+                        "key": null,
+                        "source": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket$aws:s3/bucketObject:BucketObject::static/css/2.1edd21d9.chunk.css",
+                    "custom": true,
+                    "id": "static/css/2.1edd21d9.chunk.css",
+                    "type": "aws:s3/bucketObject:BucketObject",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDestroy"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "cacheControl": "max-age=31536000",
+                        "contentType": "text/css",
+                        "forceDestroy": false,
+                        "key": "static/css/2.1edd21d9.chunk.css",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "9c7e0bb355f13d7c2664ea5cec5779cedf9da12b1c3493ba1b9e523f1526a118",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/css/2.1edd21d9.chunk.css"
+                        }
+                    },
+                    "outputs": {
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "bucketKeyEnabled": false,
+                        "cacheControl": "max-age=31536000",
+                        "contentDisposition": "",
+                        "contentEncoding": "",
+                        "contentLanguage": "",
+                        "contentType": "text/css",
+                        "etag": "84605383628d3af800c7675815c88b95",
+                        "forceDestroy": false,
+                        "id": "static/css/2.1edd21d9.chunk.css",
+                        "key": "static/css/2.1edd21d9.chunk.css",
+                        "metadata": {},
+                        "objectLockLegalHoldStatus": "",
+                        "objectLockMode": "",
+                        "objectLockRetainUntilDate": "",
+                        "serverSideEncryption": "",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "9c7e0bb355f13d7c2664ea5cec5779cedf9da12b1c3493ba1b9e523f1526a118",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/css/2.1edd21d9.chunk.css"
+                        },
+                        "storageClass": "STANDARD",
+                        "tags": {},
+                        "versionId": "",
+                        "websiteRedirect": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "bucket": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "cacheControl": null,
+                        "contentType": null,
+                        "key": null,
+                        "source": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket$aws:s3/bucketObject:BucketObject::static/js/2.ba4aa48d.chunk.js.LICENSE",
+                    "custom": true,
+                    "id": "static/js/2.ba4aa48d.chunk.js.LICENSE",
+                    "type": "aws:s3/bucketObject:BucketObject",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDestroy"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "cacheControl": "max-age=31536000",
+                        "forceDestroy": false,
+                        "key": "static/js/2.ba4aa48d.chunk.js.LICENSE",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "a6986ef5a20a38ecba04615828cec5b584d7b12bd1bbb9bc97599f191c1958e2",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/js/2.ba4aa48d.chunk.js.LICENSE"
+                        }
+                    },
+                    "outputs": {
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "bucketKeyEnabled": false,
+                        "cacheControl": "max-age=31536000",
+                        "contentDisposition": "",
+                        "contentEncoding": "",
+                        "contentLanguage": "",
+                        "contentType": "binary/octet-stream",
+                        "etag": "9d2e04d8680338650974fe8a7cf05d56",
+                        "forceDestroy": false,
+                        "id": "static/js/2.ba4aa48d.chunk.js.LICENSE",
+                        "key": "static/js/2.ba4aa48d.chunk.js.LICENSE",
+                        "metadata": {},
+                        "objectLockLegalHoldStatus": "",
+                        "objectLockMode": "",
+                        "objectLockRetainUntilDate": "",
+                        "serverSideEncryption": "",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "a6986ef5a20a38ecba04615828cec5b584d7b12bd1bbb9bc97599f191c1958e2",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/js/2.ba4aa48d.chunk.js.LICENSE"
+                        },
+                        "storageClass": "STANDARD",
+                        "tags": {},
+                        "versionId": "",
+                        "websiteRedirect": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "bucket": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "cacheControl": null,
+                        "key": null,
+                        "source": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket$aws:s3/bucketObject:BucketObject::static/js/main.15f51940.chunk.js",
+                    "custom": true,
+                    "id": "static/js/main.15f51940.chunk.js",
+                    "type": "aws:s3/bucketObject:BucketObject",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDestroy"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "cacheControl": "max-age=31536000",
+                        "contentType": "application/javascript",
+                        "forceDestroy": false,
+                        "key": "static/js/main.15f51940.chunk.js",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "6b1cbaa54ec14cdc7df68a14ebbba402787637f978c1b150337af247fd8bf3e5",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/js/main.15f51940.chunk.js"
+                        }
+                    },
+                    "outputs": {
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "bucketKeyEnabled": false,
+                        "cacheControl": "max-age=31536000",
+                        "contentDisposition": "",
+                        "contentEncoding": "",
+                        "contentLanguage": "",
+                        "contentType": "application/javascript",
+                        "etag": "aeb9b8342484308d7e40abf075b50d75",
+                        "forceDestroy": false,
+                        "id": "static/js/main.15f51940.chunk.js",
+                        "key": "static/js/main.15f51940.chunk.js",
+                        "metadata": {},
+                        "objectLockLegalHoldStatus": "",
+                        "objectLockMode": "",
+                        "objectLockRetainUntilDate": "",
+                        "serverSideEncryption": "",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "6b1cbaa54ec14cdc7df68a14ebbba402787637f978c1b150337af247fd8bf3e5",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/js/main.15f51940.chunk.js"
+                        },
+                        "storageClass": "STANDARD",
+                        "tags": {},
+                        "versionId": "",
+                        "websiteRedirect": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "bucket": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "cacheControl": null,
+                        "contentType": null,
+                        "key": null,
+                        "source": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket$aws:s3/bucketObject:BucketObject::static/js/2.ba4aa48d.chunk.js",
+                    "custom": true,
+                    "id": "static/js/2.ba4aa48d.chunk.js",
+                    "type": "aws:s3/bucketObject:BucketObject",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDestroy"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "cacheControl": "max-age=31536000",
+                        "contentType": "application/javascript",
+                        "forceDestroy": false,
+                        "key": "static/js/2.ba4aa48d.chunk.js",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "ed8a03be7f1b9e31cbfb13dd98049dcd1d360f61828b861ea7b1997524e4c36c",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/js/2.ba4aa48d.chunk.js"
+                        }
+                    },
+                    "outputs": {
+                        "acl": "public-read",
+                        "bucket": "app-6016a1e",
+                        "bucketKeyEnabled": false,
+                        "cacheControl": "max-age=31536000",
+                        "contentDisposition": "",
+                        "contentEncoding": "",
+                        "contentLanguage": "",
+                        "contentType": "application/javascript",
+                        "etag": "e3eb6fe899d75bda035f2c6617273047",
+                        "forceDestroy": false,
+                        "id": "static/js/2.ba4aa48d.chunk.js",
+                        "key": "static/js/2.ba4aa48d.chunk.js",
+                        "metadata": {},
+                        "objectLockLegalHoldStatus": "",
+                        "objectLockMode": "",
+                        "objectLockRetainUntilDate": "",
+                        "serverSideEncryption": "",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "ed8a03be7f1b9e31cbfb13dd98049dcd1d360f61828b861ea7b1997524e4c36c",
+                            "path": "C:\\Programowanie\\Private\\mapps-io-project\\mapps-io-webiny\\mapps-io-webiny\\apps\\website\\code\\build/static/js/2.ba4aa48d.chunk.js"
+                        },
+                        "storageClass": "STANDARD",
+                        "tags": {},
+                        "versionId": "",
+                        "websiteRedirect": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "bucket": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "cacheControl": null,
+                        "contentType": null,
+                        "key": null,
+                        "source": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:cloudfront/distribution:Distribution::app",
+                    "custom": true,
+                    "id": "E1CPTEQCDQ02K",
+                    "type": "aws:cloudfront/distribution:Distribution",
+                    "inputs": {
+                        "__defaults": [
+                            "httpVersion",
+                            "isIpv6Enabled",
+                            "retainOnDelete"
+                        ],
+                        "customErrorResponses": [
+                            {
+                                "__defaults": [],
+                                "errorCode": 404,
+                                "responseCode": 404,
+                                "responsePagePath": "/index.html"
+                            }
+                        ],
+                        "defaultCacheBehavior": {
+                            "__defaults": [],
+                            "allowedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "cachedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "compress": true,
+                            "defaultTtl": 600,
+                            "forwardedValues": {
+                                "__defaults": [],
+                                "cookies": {
+                                    "__defaults": [],
+                                    "forward": "none"
+                                },
+                                "queryString": false
+                            },
+                            "maxTtl": 600,
+                            "minTtl": 0,
+                            "targetOriginId": "arn:aws:s3:::app-6016a1e",
+                            "viewerProtocolPolicy": "redirect-to-https"
+                        },
+                        "defaultRootObject": "index.html",
+                        "enabled": true,
+                        "httpVersion": "http2",
+                        "isIpv6Enabled": false,
+                        "origins": [
+                            {
+                                "__defaults": [],
+                                "customOriginConfig": {
+                                    "__defaults": [
+                                        "originKeepaliveTimeout",
+                                        "originReadTimeout"
+                                    ],
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "originKeepaliveTimeout": 5,
+                                    "originProtocolPolicy": "http-only",
+                                    "originReadTimeout": 30,
+                                    "originSslProtocols": [
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "domainName": "app-6016a1e.s3-website.eu-central-1.amazonaws.com",
+                                "originId": "arn:aws:s3:::app-6016a1e"
+                            }
+                        ],
+                        "priceClass": "PriceClass_100",
+                        "restrictions": {
+                            "__defaults": [],
+                            "geoRestriction": {
+                                "__defaults": [],
+                                "restrictionType": "none"
+                            }
+                        },
+                        "retainOnDelete": false,
+                        "viewerCertificate": {
+                            "__defaults": [
+                                "minimumProtocolVersion"
+                            ],
+                            "cloudfrontDefaultCertificate": true,
+                            "minimumProtocolVersion": "TLSv1"
+                        },
+                        "waitForDeployment": true
+                    },
+                    "outputs": {
+                        "__meta": "{\"schema_version\":\"1\"}",
+                        "aliases": [],
+                        "arn": "arn:aws:cloudfront::527223251061:distribution/E1CPTEQCDQ02K",
+                        "callerReference": "terraform-20210319120140963600000002",
+                        "customErrorResponses": [
+                            {
+                                "errorCachingMinTtl": 0,
+                                "errorCode": 404,
+                                "responseCode": 404,
+                                "responsePagePath": "/index.html"
+                            }
+                        ],
+                        "defaultCacheBehavior": {
+                            "allowedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "cachePolicyId": "",
+                            "cachedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "compress": true,
+                            "defaultTtl": 600,
+                            "fieldLevelEncryptionId": "",
+                            "forwardedValues": {
+                                "cookies": {
+                                    "forward": "none",
+                                    "whitelistedNames": []
+                                },
+                                "headers": [],
+                                "queryString": false,
+                                "queryStringCacheKeys": []
+                            },
+                            "lambdaFunctionAssociations": [],
+                            "maxTtl": 600,
+                            "minTtl": 0,
+                            "originRequestPolicyId": "",
+                            "realtimeLogConfigArn": "",
+                            "smoothStreaming": false,
+                            "targetOriginId": "arn:aws:s3:::app-6016a1e",
+                            "trustedSigners": [],
+                            "viewerProtocolPolicy": "redirect-to-https"
+                        },
+                        "defaultRootObject": "index.html",
+                        "domainName": "d3ibc17ywfs9m6.cloudfront.net",
+                        "enabled": true,
+                        "etag": "E2UGXI9UHQ4TNI",
+                        "hostedZoneId": "Z2FDTNDATAQYW2",
+                        "httpVersion": "http2",
+                        "id": "E1CPTEQCDQ02K",
+                        "inProgressValidationBatches": 0,
+                        "isIpv6Enabled": false,
+                        "lastModifiedTime": "2021-03-19 12:01:42.327 +0000 UTC",
+                        "loggingConfig": null,
+                        "orderedCacheBehaviors": [],
+                        "origins": [
+                            {
+                                "customHeaders": [],
+                                "customOriginConfig": {
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "originKeepaliveTimeout": 5,
+                                    "originProtocolPolicy": "http-only",
+                                    "originReadTimeout": 30,
+                                    "originSslProtocols": [
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "domainName": "app-6016a1e.s3-website.eu-central-1.amazonaws.com",
+                                "originId": "arn:aws:s3:::app-6016a1e",
+                                "originPath": "",
+                                "s3OriginConfig": null
+                            }
+                        ],
+                        "priceClass": "PriceClass_100",
+                        "restrictions": {
+                            "geoRestriction": {
+                                "locations": [],
+                                "restrictionType": "none"
+                            }
+                        },
+                        "retainOnDelete": false,
+                        "status": "Deployed",
+                        "tags": {},
+                        "trustedSigners": [
+                            {
+                                "enabled": false,
+                                "items": []
+                            }
+                        ],
+                        "viewerCertificate": {
+                            "acmCertificateArn": "",
+                            "cloudfrontDefaultCertificate": true,
+                            "iamCertificateId": "",
+                            "minimumProtocolVersion": "TLSv1",
+                            "sslSupportMethod": ""
+                        },
+                        "waitForDeployment": true,
+                        "webAclId": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "customErrorResponses": null,
+                        "defaultCacheBehavior": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "defaultRootObject": null,
+                        "enabled": null,
+                        "origins": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "priceClass": null,
+                        "restrictions": null,
+                        "viewerCertificate": null,
+                        "waitForDeployment": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:cloudfront/distribution:Distribution::delivery",
+                    "custom": true,
+                    "id": "E3POTU60R18JMH",
+                    "type": "aws:cloudfront/distribution:Distribution",
+                    "inputs": {
+                        "__defaults": [
+                            "httpVersion",
+                            "isIpv6Enabled",
+                            "retainOnDelete"
+                        ],
+                        "defaultCacheBehavior": {
+                            "__defaults": [],
+                            "allowedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "cachedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "compress": true,
+                            "defaultTtl": 30,
+                            "forwardedValues": {
+                                "__defaults": [],
+                                "cookies": {
+                                    "__defaults": [],
+                                    "forward": "none"
+                                },
+                                "queryString": true
+                            },
+                            "maxTtl": 30,
+                            "minTtl": 0,
+                            "targetOriginId": "arn:aws:s3:::delivery-00906ab",
+                            "viewerProtocolPolicy": "redirect-to-https"
+                        },
+                        "defaultRootObject": "index.html",
+                        "enabled": true,
+                        "httpVersion": "http2",
+                        "isIpv6Enabled": false,
+                        "orderedCacheBehaviors": [
+                            {
+                                "__defaults": [],
+                                "allowedMethods": [
+                                    "GET",
+                                    "HEAD",
+                                    "OPTIONS"
+                                ],
+                                "cachedMethods": [
+                                    "GET",
+                                    "HEAD",
+                                    "OPTIONS"
+                                ],
+                                "compress": true,
+                                "defaultTtl": 2592000,
+                                "forwardedValues": {
+                                    "__defaults": [],
+                                    "cookies": {
+                                        "__defaults": [],
+                                        "forward": "none"
+                                    },
+                                    "headers": [],
+                                    "queryString": false
+                                },
+                                "maxTtl": 2592000,
+                                "minTtl": 0,
+                                "pathPattern": "/static/*",
+                                "targetOriginId": "arn:aws:s3:::app-6016a1e",
+                                "viewerProtocolPolicy": "allow-all"
+                            }
+                        ],
+                        "origins": [
+                            {
+                                "__defaults": [],
+                                "customOriginConfig": {
+                                    "__defaults": [
+                                        "originKeepaliveTimeout",
+                                        "originReadTimeout"
+                                    ],
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "originKeepaliveTimeout": 5,
+                                    "originProtocolPolicy": "http-only",
+                                    "originReadTimeout": 30,
+                                    "originSslProtocols": [
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "domainName": "delivery-00906ab.s3-website.eu-central-1.amazonaws.com",
+                                "originId": "arn:aws:s3:::delivery-00906ab"
+                            },
+                            {
+                                "__defaults": [],
+                                "customOriginConfig": {
+                                    "__defaults": [
+                                        "originKeepaliveTimeout",
+                                        "originReadTimeout"
+                                    ],
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "originKeepaliveTimeout": 5,
+                                    "originProtocolPolicy": "http-only",
+                                    "originReadTimeout": 30,
+                                    "originSslProtocols": [
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "domainName": "app-6016a1e.s3-website.eu-central-1.amazonaws.com",
+                                "originId": "arn:aws:s3:::app-6016a1e"
+                            }
+                        ],
+                        "priceClass": "PriceClass_100",
+                        "restrictions": {
+                            "__defaults": [],
+                            "geoRestriction": {
+                                "__defaults": [],
+                                "restrictionType": "none"
+                            }
+                        },
+                        "retainOnDelete": false,
+                        "viewerCertificate": {
+                            "__defaults": [
+                                "minimumProtocolVersion"
+                            ],
+                            "cloudfrontDefaultCertificate": true,
+                            "minimumProtocolVersion": "TLSv1"
+                        },
+                        "waitForDeployment": true
+                    },
+                    "outputs": {
+                        "__meta": "{\"schema_version\":\"1\"}",
+                        "aliases": [],
+                        "arn": "arn:aws:cloudfront::527223251061:distribution/E3POTU60R18JMH",
+                        "callerReference": "terraform-20210319120140756200000001",
+                        "customErrorResponses": [],
+                        "defaultCacheBehavior": {
+                            "allowedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "cachePolicyId": "",
+                            "cachedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "compress": true,
+                            "defaultTtl": 30,
+                            "fieldLevelEncryptionId": "",
+                            "forwardedValues": {
+                                "cookies": {
+                                    "forward": "none",
+                                    "whitelistedNames": []
+                                },
+                                "headers": [],
+                                "queryString": true,
+                                "queryStringCacheKeys": []
+                            },
+                            "lambdaFunctionAssociations": [],
+                            "maxTtl": 30,
+                            "minTtl": 0,
+                            "originRequestPolicyId": "",
+                            "realtimeLogConfigArn": "",
+                            "smoothStreaming": false,
+                            "targetOriginId": "arn:aws:s3:::delivery-00906ab",
+                            "trustedSigners": [],
+                            "viewerProtocolPolicy": "redirect-to-https"
+                        },
+                        "defaultRootObject": "index.html",
+                        "domainName": "d2p2zdapj3zp2n.cloudfront.net",
+                        "enabled": true,
+                        "etag": "E18KBRMIB8LXC9",
+                        "hostedZoneId": "Z2FDTNDATAQYW2",
+                        "httpVersion": "http2",
+                        "id": "E3POTU60R18JMH",
+                        "inProgressValidationBatches": 0,
+                        "isIpv6Enabled": false,
+                        "lastModifiedTime": "2021-03-19 12:01:42.973 +0000 UTC",
+                        "loggingConfig": null,
+                        "orderedCacheBehaviors": [
+                            {
+                                "allowedMethods": [
+                                    "GET",
+                                    "HEAD",
+                                    "OPTIONS"
+                                ],
+                                "cachePolicyId": "",
+                                "cachedMethods": [
+                                    "GET",
+                                    "HEAD",
+                                    "OPTIONS"
+                                ],
+                                "compress": true,
+                                "defaultTtl": 2592000,
+                                "fieldLevelEncryptionId": "",
+                                "forwardedValues": {
+                                    "cookies": {
+                                        "forward": "none",
+                                        "whitelistedNames": []
+                                    },
+                                    "headers": [],
+                                    "queryString": false,
+                                    "queryStringCacheKeys": []
+                                },
+                                "lambdaFunctionAssociations": [],
+                                "maxTtl": 2592000,
+                                "minTtl": 0,
+                                "originRequestPolicyId": "",
+                                "pathPattern": "/static/*",
+                                "realtimeLogConfigArn": "",
+                                "smoothStreaming": false,
+                                "targetOriginId": "arn:aws:s3:::app-6016a1e",
+                                "trustedSigners": [],
+                                "viewerProtocolPolicy": "allow-all"
+                            }
+                        ],
+                        "origins": [
+                            {
+                                "customHeaders": [],
+                                "customOriginConfig": {
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "originKeepaliveTimeout": 5,
+                                    "originProtocolPolicy": "http-only",
+                                    "originReadTimeout": 30,
+                                    "originSslProtocols": [
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "domainName": "app-6016a1e.s3-website.eu-central-1.amazonaws.com",
+                                "originId": "arn:aws:s3:::app-6016a1e",
+                                "originPath": "",
+                                "s3OriginConfig": null
+                            },
+                            {
+                                "customHeaders": [],
+                                "customOriginConfig": {
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "originKeepaliveTimeout": 5,
+                                    "originProtocolPolicy": "http-only",
+                                    "originReadTimeout": 30,
+                                    "originSslProtocols": [
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "domainName": "delivery-00906ab.s3-website.eu-central-1.amazonaws.com",
+                                "originId": "arn:aws:s3:::delivery-00906ab",
+                                "originPath": "",
+                                "s3OriginConfig": null
+                            }
+                        ],
+                        "priceClass": "PriceClass_100",
+                        "restrictions": {
+                            "geoRestriction": {
+                                "locations": [],
+                                "restrictionType": "none"
+                            }
+                        },
+                        "retainOnDelete": false,
+                        "status": "Deployed",
+                        "tags": {},
+                        "trustedSigners": [
+                            {
+                                "enabled": false,
+                                "items": []
+                            }
+                        ],
+                        "viewerCertificate": {
+                            "acmCertificateArn": "",
+                            "cloudfrontDefaultCertificate": true,
+                            "iamCertificateId": "",
+                            "minimumProtocolVersion": "TLSv1",
+                            "sslSupportMethod": ""
+                        },
+                        "waitForDeployment": true,
+                        "webAclId": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::delivery",
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_3_33_0::a838a015-4130-4e0b-8de5-06c2f3055ee7",
+                    "propertyDependencies": {
+                        "defaultCacheBehavior": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::delivery"
+                        ],
+                        "defaultRootObject": null,
+                        "enabled": null,
+                        "orderedCacheBehaviors": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "origins": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::delivery",
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "priceClass": null,
+                        "restrictions": null,
+                        "viewerCertificate": null,
+                        "waitForDeployment": null
+                    }
+                }
+            ]
+        }
+    }
+}

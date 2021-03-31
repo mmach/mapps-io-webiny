@@ -19,9 +19,4 @@ cypress.json
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
-*/*/.palumni
-apps/admin/.pulumi/
-apps/website/.pulumi/
-api/.pulumi/backups/
-api/.pulumi/
 _webinyGit/
