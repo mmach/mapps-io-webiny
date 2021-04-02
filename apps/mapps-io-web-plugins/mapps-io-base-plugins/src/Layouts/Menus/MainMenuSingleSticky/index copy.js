@@ -1,4 +1,4 @@
-import { Grid, IconButton } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -14,12 +14,12 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { mappsPlugins } from "../../..";
-import { DRAWER_ACTIONS, FadeIn } from "../../../Components";
-import MenuIcon from "@material-ui/icons/Menu";
+import { FadeIn } from "../../../Components";
 
 function ButtonNested(props) {
     const Link = React.useMemo(() => mappsPlugins.byName("mapps-item-basic-link").comopnent);
 
+    
     const [open, setOpen] = React.useState(false);
     const item = props.data;
     const anchorRef = React.useRef(null);
@@ -52,7 +52,7 @@ function ButtonNested(props) {
         prevOpen.current = open;
     }, [open]);
 
-    if (Array.isArray(item.children)) {
+    if (Array.isArray(item.children) && item.children.length>0) {
         return (
             <React.Fragment key={item.id}>
                 <Button
@@ -113,7 +113,7 @@ function ButtonNested(props) {
                                                     {" "}
                                                     <NavItem
                                                         to={
-                                                            chitem.url || chitem.path || chitem.href
+                                                            chitem.path
                                                         }
                                                         as={Link}
                                                         style={{
@@ -155,7 +155,7 @@ function ButtonNested(props) {
                     padding: "0px"
                 }}
                 key={item.id}
-                to={item.url || item.path || item.href}
+                to={item.path}
                 as={Link}
             >
                 {item.title}
@@ -164,26 +164,11 @@ function ButtonNested(props) {
     );
 }
 
-const MainMenuStickySmallMobileRender = props => {
+const MainMenuStickySmallRender = props => {
     const Link = React.useMemo(() => mappsPlugins.byName("mapps-item-basic-link").component);
     const topMenuItems = React.useMemo(() => mappsPlugins.byType("mapps-layout-menu-icons"));
-    const Logo = React.useMemo(
-        () => mappsPlugins.byName("mapps-layout-logo-main-mobile").component
-    );
-    const MenuQuery = React.useMemo(() => mappsPlugins.byName("mapps-menu-link-query").component);
-    const MenuComponent = React.useMemo(
-        () =>
-            mappsPlugins.byName('mapps-item-component-menu-variant2').render
-    );
+    const Logo = React.useMemo(() => mappsPlugins.byName("mapps-layout-logo-main-desktop").component);
 
-    function openDrawe() {
-        props.openDrawer(true,
-
-            <MenuComponent  {...props}></MenuComponent>
-
-
-            , "right", topMenuItems);
-    }
     if (!props.data) {
         return null;
     }
@@ -197,38 +182,73 @@ const MainMenuStickySmallMobileRender = props => {
                     top: "0px",
                     zIndex: 1000,
                     borderBottom: "1px solid #999",
-                    height: "50px",
+                    height: "85px",
                     alignContent: "flex-end"
                 }}
                 container
             >
-                <Grid item xs="2" style={{ display: "flex", alignItems: "center" }}>
+                <Grid item xs="1" style={{display:'flex',alignItems:'center'}}>
                     <Link to={"/"}>
-                        <Logo />
+                       <Logo/>
                     </Link>
                 </Grid>
 
                 <Grid
                     item
-                    xs="10"
+                    xs="11"
                     style={{
                         display: "flex",
                         flexFlow: "row-reverse",
-                        alignSelf: "center",
-                        paddingRight: "5px"
+                        flexDirection: "column"
                     }}
                     container
                 >
-                    {" "}
-                    <IconButton onClick={openDrawe}>
-                        <MenuIcon />
-                    </IconButton>
-                    {topMenuItems
-                        .sort((a, b) => (a.order > b.order ? 1 : -1))
-                        .map((i, key) => {
-                            const Component = i.component;
-                            return <Component variant="icon1" key={key}></Component>;
-                        })}
+                    <Grid
+                        container
+                        item
+                        xs="12"
+                        style={{
+                            display: "flex",
+                            flexFlow: "row-reverse",
+                            color: "white",
+                            paddingRight: "10px",
+                            paddingTop: "2px",
+                            marginRight: "3px"
+                        }}
+                    >
+                        {topMenuItems
+                            .sort((a, b) => (a.order > b.order ? 1 : -1))
+                            .map((i, key) => {
+                                const Component = i.component;
+                                return <Component variant="icon1" key={key}></Component>;
+                            })}
+                    </Grid>
+                    <Grid item xs="12" style={{ justifyContent: "flex-end", marginRight: "10px" }}>
+                        <NavMenu
+                            useStyles={usePlainNavigationMenuStyles}
+                            style={{ justifyContent: "flex-end" }}
+                        >
+                            {props.data.items.map(i => {
+                                return (
+                                    <FadeIn key={i.id}>
+                                        <ButtonNested data={i}></ButtonNested>
+                                    </FadeIn>
+                                );
+                            })}
+                            {props.data.items.length == 0 && (
+                                <Button>
+                                    <NavItem
+                                        style={{
+                                            textDecoration: "none",
+                                            fontSize: "14px",
+                                            letterSpacing: ".07143rem",
+                                            textTransform: "uppercase"
+                                        }}
+                                    ></NavItem>
+                                </Button>
+                            )}
+                        </NavMenu>
+                    </Grid>
                 </Grid>
             </Grid>
         </React.Fragment>
@@ -244,22 +264,8 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        openDrawer: (open, body, anchor, menu) => {
-            dispatch({
-                type: DRAWER_ACTIONS.OPEN_DRAWER,
-                dto: {
-                    open: open,
-                    body: body,
-                    anchor: anchor,
-                    menu: menu
-                }
-            });
-        }
-    };
+const mapDispatchToProps = () => {
+    return;
 };
 
-export default withRouter(
-    connect(mapStateToProps, mapDispatchToProps)(MainMenuStickySmallMobileRender)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MainMenuStickySmallRender));

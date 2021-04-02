@@ -140,7 +140,7 @@ function MapView(props) {
       minZoom={6}
       center={latlon}
       zoom={zoom}
-      style={{ width: "100%", height: "calc(var(--app-height) - 85px - 48px)" }}
+      style={{ width: "100%", height: props.mappsSettings.height }}
     >
       <LocationMarkerMemo
         setPositionButton={props.setPositionButton}

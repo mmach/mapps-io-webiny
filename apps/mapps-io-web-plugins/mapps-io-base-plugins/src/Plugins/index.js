@@ -1,6 +1,7 @@
 import {
     SearchItemFilterInitEnginePlugin,
-    SearchItemFilterPlugin
+    SearchItemFilterPlugin,
+    SearchItemFilterButtonPlugin
 } from "./Items/searchFilterPlugin";
 import {
     SearchItemMapPlugin,
@@ -91,6 +92,7 @@ export {
     SearchItemListPaginationPlugin,
     SearchItemFilterInitEnginePlugin,
     SearchItemFilterPlugin,
+    SearchItemFilterButtonPlugin,
     SearchItemResultsViewPlugin,
     SearchItemMapPlugin,
     SearchMapContainerPlugin,

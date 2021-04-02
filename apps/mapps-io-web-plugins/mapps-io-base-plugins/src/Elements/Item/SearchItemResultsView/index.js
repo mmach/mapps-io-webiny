@@ -15,60 +15,28 @@ function SearchItemResultView(props) {
     const containers = React.useMemo(() =>
         mappsPlugins.byType("mapps-item-search-container-results")
     );
-    const isMobile = useMediaQuery("(max-width:991px)");
-    const [device, setDevice] = React.useState("desktop");
-    const [filterParams, setFilter] = React.useState({});
+    const deviceType = React.useMemo(
+        () => mappsPlugins.byName("mapps-item-use-device-type")
+    ).useHook();
 
-    const drawer = React.useMemo(() => mappsPlugins.byName(filterParams.mappsNamePlugin), [
-        filterParams.mappsNamePlugin
-    ]);
+    const plugin = React.useMemo(() => containers.find(
+        (i) => i.mappsKey == variant
+    ), [variant])
 
-    React.useEffect(() => {
-        if (isMobile) {
-            setDevice("mobile");
-            setFilter(props.element.data.searchFilter["mobile"]);
-        } else {
-            setDevice("desktop");
-            setFilter(props.element.data.searchFilter["desktop"]);
-        }
-    }, [isMobile]);
+
     React.useEffect(() => {
         setVariant(props.filterSearchReducer.search.view);
     }, [props.filterSearchReducer.search.view]);
-    const plugin = containers.find(
-        (i) => i.mappsKey == variant && filterParams[variant] && filterParams[variant].isActive
-    );
-    function openDrawe() {
-        props.openDrawer(true, drawer.render({ mappsSettings: filterParams }), "left");
-    }
+
     return (
-        <Grid item container style={{ width: "100%", height: "100%" }}>
-            {filterParams.useSearch && drawer && (
-                <div style={{ display: "none" }}>
-                    {drawer.render({ mappsSettings: filterParams })}
-                </div>
-            )}
-            {filterParams.useSearch && filterParams.useButton && (
-                <Fab
-                    onClick={openDrawe}
-                    aria-label="add"
-                    style={{
-                        position: "absolute",
-                        zIndex: 500,
-                        left: filterParams.searchButton.left,
-                        top: filterParams.searchButton.top,
-                        bottom: filterParams.searchButton.bottom,
-                        right: filterParams.searchButton.right
-                    }}
-                >
-                    <SearchIcon />
-                </Fab>
-            )}
+        <Grid item container style={{ width: "100%", height: props.element.data.containerSettings[deviceType.device].height, position: 'relative' }}>
+
             {plugin &&
                 plugin.containerRender({
                     ...props,
                     mappsSettings:
-                        props.element.data[variant] && props.element.data[variant][device]
+                        props.element.data[variant] && props.element.data[variant][deviceType.device],
+                        height:props.element.data.containerSettings[deviceType.device].height
                 })}
         </Grid>
     );

@@ -3,15 +3,14 @@ import React from "react";
 import SearchItemFilterPanel from "./../../Elements/Item/SearchItemFilterPanel";
 import SearchItemInitFilterPanel from "./../../Elements/Item/SearchItemFilterPanel/searchInit";
 import { Scrollbars } from "react-custom-scrollbars";
+import { SearchFilterButtonVariant } from "../../Elements";
 
 export const SearchItemFilterPlugin = {
     name: "mapps-item-search-filter-advance",
     type: "mapps-item-search-filter",
     // eslint-disable-next-line react/display-name
     render: (props) => {
-        if (props.mappsSettings.useSearch != true) {
-            return <span></span>;
-        }
+       
         return (
             <Grid
                 style={{
@@ -35,7 +34,18 @@ export const SearchItemFilterPlugin = {
         );
     }
 };
-
+export const SearchItemFilterButtonPlugin = {
+    name: "mapps-item-search-filter-advance-button",
+    type: "mapps-item-search-filter",
+    // eslint-disable-next-line react/display-name
+    render: (props) => {
+       
+        return (
+            <SearchFilterButtonVariant                         {...props}
+            />
+        );
+    }
+};
 export const SearchItemFilterInitEnginePlugin = {
     name: "mapps-item-search-filter-init-engine",
     type: "mapps-item-search-filter-init",

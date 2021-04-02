@@ -3,11 +3,8 @@ import Button from "@material-ui/core/Button";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grow from "@material-ui/core/Grow";
-import MenuItem from "@material-ui/core/MenuItem";
-import MenuList from "@material-ui/core/MenuList";
 import Paper from "@material-ui/core/Paper";
 import Popper from "@material-ui/core/Popper";
-import { NavItem, NavMenu } from "@mui-treasury/components/menu/navigation";
 import { usePlainNavigationMenuStyles } from "@mui-treasury/styles/navigationMenu/plain";
 import Image from "material-ui-image";
 import React from "react";
@@ -15,11 +12,16 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { mappsPlugins } from "../../..";
 import { FadeIn } from "../../../Components";
+import { Translator } from "justshare-shared";
+import { uuid } from "uuidv4";
+import MenuItem from "@material-ui/core/MenuItem";
+import MenuList from "@material-ui/core/MenuList";
+import { NavItem, NavMenu } from "@mui-treasury/components/menu/navigation";
 
 function ButtonNested(props) {
-    const Link = React.useMemo(() => mappsPlugins.byName("mapps-item-basic-link").comopnent);
+    const Link = React.useMemo(() => mappsPlugins.byName("mapps-item-basic-link").component);
 
-    
+
     const [open, setOpen] = React.useState(false);
     const item = props.data;
     const anchorRef = React.useRef(null);
@@ -52,9 +54,9 @@ function ButtonNested(props) {
         prevOpen.current = open;
     }, [open]);
 
-    if (Array.isArray(item.children)) {
+    if (Array.isArray(item.children) && item.children.length > 0) {
         return (
-            <React.Fragment key={item.id}>
+            <React.Fragment key={uuid()} >
                 <Button
                     style={{
                         padding: "0px"
@@ -113,7 +115,7 @@ function ButtonNested(props) {
                                                     {" "}
                                                     <NavItem
                                                         to={
-                                                            chitem.url || chitem.path || chitem.href
+                                                            chitem.path
                                                         }
                                                         as={Link}
                                                         style={{
@@ -142,7 +144,7 @@ function ButtonNested(props) {
     return (
         <Button
             style={{
-                padding: "3px 15px",
+                padding: "0px",
                 marginRight: "10px"
             }}
         >
@@ -152,10 +154,10 @@ function ButtonNested(props) {
                     fontSize: "14px",
                     letterSpacing: ".07143rem",
                     textTransform: "uppercase",
-                    padding: "0px"
+                    padding: "3px 15px",
                 }}
                 key={item.id}
-                to={item.url || item.path || item.href}
+                to={item.path}
                 as={Link}
             >
                 {item.title}
@@ -168,6 +170,7 @@ const MainMenuStickySmallRender = props => {
     const Link = React.useMemo(() => mappsPlugins.byName("mapps-item-basic-link").component);
     const topMenuItems = React.useMemo(() => mappsPlugins.byType("mapps-layout-menu-icons"));
     const Logo = React.useMemo(() => mappsPlugins.byName("mapps-layout-logo-main-desktop").component);
+    const tran = Translator(props.codeDict.data.LABEL, props.lang);
 
     if (!props.data) {
         return null;
@@ -187,15 +190,15 @@ const MainMenuStickySmallRender = props => {
                 }}
                 container
             >
-                <Grid item xs="1" style={{display:'flex',alignItems:'center'}}>
+                <Grid item xs="2" style={{ display: 'flex', alignItems: 'center' }}>
                     <Link to={"/"}>
-                       <Logo/>
+                        <Logo />
                     </Link>
                 </Grid>
 
                 <Grid
                     item
-                    xs="11"
+                    xs="10"
                     style={{
                         display: "flex",
                         flexFlow: "row-reverse",

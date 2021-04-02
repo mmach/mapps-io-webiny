@@ -46,7 +46,7 @@ const FooterCollapseRender = (props) => {
             <Grid ref={anchorRef} container style={{ justifyContent: "center", height: "35px" }}>
                 <Grid item style={{ alignSelf: "center" }}>
                     <IconButton
-                        size="medium"
+                        size="small"
                         aria-controls={open ? item.id : undefined}
                         aria-haspopup="true"
                         onClick={handleToggle}

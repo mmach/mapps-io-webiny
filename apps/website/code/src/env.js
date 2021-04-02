@@ -27,7 +27,6 @@ const config = {
         BLOB_URL: "https://api.mapps.io"
     }
 };
-console.log(process.env)
 //const env = window.localStorage.cms_environment;
 const conf = config[process.env.NODE_ENV.toUpperCase()];
 

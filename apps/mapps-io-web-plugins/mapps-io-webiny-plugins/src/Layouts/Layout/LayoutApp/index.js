@@ -24,8 +24,8 @@ const LayoutApp = ({ children }) => {
         <React.Fragment>
             <Header />
             {(deviceType.isMobile || deviceType.isMobileLandscape || deviceType.isTablet) ? (
-                <div className="layoutApp" style={{ height: "calc(var(--app-height) - 50px - 35px)" }}>{children}</div>
-            ):<div className="layoutApp" style={{ height: "calc(var(--app-height) - 85px - 48px)" }}>{children}</div>}
+                <div className="layoutApp" style={{ height: "calc(var(--app-height) - 50px - 35px)",position:'relative' }}>{children}</div>
+            ):<div className="layoutApp" style={{ height: "calc(var(--app-height) - 85px - 48px)" ,position:'relative'}}>{children}</div>}
            
 
             <Footer />

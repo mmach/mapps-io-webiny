@@ -22,6 +22,7 @@ import SearchItemMap from "./Item/SearchItemMap/index.js";
 import SearchItemResultsView from "./Item/SearchItemResultsView";
 import LoginIconMenuHeader from "./User/Header/LoginIconMenuHeader";
 import UserIconMenuHeader from "./User/Header/UserIconMenuHeader";
+import SearchFilterButtonVariant from "./Item/SearchItemFilterPanel/search_button";
 
 
 export {
@@ -47,7 +48,8 @@ export {
     SearchItemMap,
     SearchItemResultsView,
     LoginIconMenuHeader,
-    UserIconMenuHeader
+    UserIconMenuHeader,
+    SearchFilterButtonVariant
 };
 
 

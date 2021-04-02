@@ -1,10 +1,12 @@
 import styled from "@emotion/styled";
-import React from "react";
-import ElementWrapper from "./../../../elementWrap";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
 import { mappsPlugins } from "mapps-io-base-plugins/src";
+import React from "react";
 import devicesType from "../../../devicesType";
+import ElementWrapper from "./../../../elementWrap";
 
+
+const is_editor = true;
 const PreviewBox = styled("div")({
     textAlign: "center",
     height: 40,
@@ -13,14 +15,13 @@ const PreviewBox = styled("div")({
         width: 50
     }
 });
-
 const PbElement = (name) => {
     return {
         name: `pb-editor-page-element-${name}`,
         type: "pb-editor-page-element",
         elementType: name,
         toolbar: {
-            title: "Search Item Result View",
+            title: "Preview Item",
             group: "pb-editor-element-group-mapps-item",
             preview() {
                 return (
@@ -36,51 +37,27 @@ const PbElement = (name) => {
             "pb-editor-page-element-settings-border",
             "pb-editor-page-element-settings-background",
             "pb-editor-page-element-settings-padding",
-            "pb-editor-page-element-settings-margin",
-            "pb-editor-page-element-settings-height",
-            "pb-editor-page-element-settings-width"
+            "pb-editor-page-element-settings-margin"
         ],
         target: ["row", "column"],
         onCreate: "open-settings",
         create(options) {
-           
-            let containerResulst={};
+            const componentData = {};
             devicesType.forEach(i=>{
-                containerResulst[i.device]={
-                    width: "100%",
-                    height: "calc(var(--app-height) - 50px - 35px)"
-                }
-            })
-            let mapSettings={};
-            devicesType.forEach(i=>{
-                mapSettings[i.device]={
-                    mappsNamePlugin: "mapps-item-search-container-view-map",
-                    useZoomBtn: true,
-                    useSetPositionBtn: true,
-                    showCurrentPin: true,
-                    setPositionBtn: {
-                        top: "0px",
-                        left: "0px",
-                        right: "0px",
-                        bottom: "0px"
-                    }
-                }
-            })
-            let listSettings={};
-            devicesType.forEach(i=>{
-                listSettings[i.device]={
-                    mappsNamePlugin: "mapps-item-search-container-view-list",
-                    mappsNamePaginationPlugin: "mapps-item-search-container-view-list-pagination"
+                componentData[i.device]={
+                    mappsNamePlugin: "mapps-item-preview-item-default",
                 }
             })
             return {
                 type: name,
                 elements: [],
                 data: {
-                    containerSettings: containerResulst,
-                    MAP:mapSettings,
-                    
-                    LIST:listSettings,
+                    componentData: componentData,
+                    redirect: {
+                        mobile: "",
+                        redirect: ""
+                    },
+
                     settings: {
                         //  horizontalAlign: "center",
                         background: {
@@ -110,11 +87,22 @@ const PbElement = (name) => {
             };
         },
         render(props) {
-            const plugin = React.useMemo(()=>mappsPlugins.byName("mapps-item-search-results"));
+            const deviceType = mappsPlugins.byName('mapps-item-use-device-type-builder').useHook();
+            const plugin = React.useMemo(() =>
+                mappsPlugins.byName(props.element.data.componentData[deviceType.device].mappsNamePlugin)
+            );
+            if(!plugin)
+            {
+                return  <ElementWrapper {...props} is_editor={is_editor}>
+                            CHOOSE PLUGIN
+                        </ElementWrapper>
+            }
             return (
-                <ElementWrapper {...props} is_editor={true}>
+                <ElementWrapper {...props} is_editor={is_editor}>
                     {plugin.render({
-                        ...props
+                        ...props,
+                        mappsSettings: props.element.data.componentData[deviceType.device],
+                        is_editor: is_editor
                     })}
                 </ElementWrapper>
             );

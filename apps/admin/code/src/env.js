@@ -21,15 +21,13 @@ const config = {
         BLOB_URL: "https://api.mapps.io"
     },
     PRODUCTION: {
-        DEBUG: 1,
         API_URL: "https://api.mapps.io",
         SOCKET_URL: "https://api.mapps.io",
         PROXY: "https://proxy.mapps.io",
         BLOB_URL: "https://api.mapps.io"
     }
 };
-
-const env = window.localStorage.cms_environment;
-const conf = config[JSON.parse(env).name.toUpperCase()];
+//const env = window.localStorage.cms_environment;
+const conf = config[process.env.NODE_ENV.toUpperCase()];
 
 module.exports = global.env = { ...conf, ...process.env };

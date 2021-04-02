@@ -17678,9 +17678,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"mapps-io-admin-plugins@portal:/C:/Programowanie/Private/mapps-io-project/mapps-io-webiny/mapps-io-webiny/apps/mapps-io-web-plugins/mapps-io-admin-plugins::locator=mapps-io-webiny%40workspace%3A.":
+"mapps-io-admin-plugins@portal:/C:/Repos/Private/mapps-io-web/apps/mapps-io-web-plugins/mapps-io-admin-plugins::locator=mapps-io-webiny%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "mapps-io-admin-plugins@portal:/C:/Programowanie/Private/mapps-io-project/mapps-io-webiny/mapps-io-webiny/apps/mapps-io-web-plugins/mapps-io-admin-plugins::locator=mapps-io-webiny%40workspace%3A."
+  resolution: "mapps-io-admin-plugins@portal:/C:/Repos/Private/mapps-io-web/apps/mapps-io-web-plugins/mapps-io-admin-plugins::locator=mapps-io-webiny%40workspace%3A."
   dependencies:
     "@babel/cli": ^7.10.4
     "@babel/core": 7.10.4
@@ -17858,9 +17858,9 @@ fsevents@^1.2.7:
   languageName: unknown
   linkType: soft
 
-"mapps-io-admin-webiny-plugins@portal:/C:/Programowanie/Private/mapps-io-project/mapps-io-webiny/mapps-io-webiny/apps/mapps-io-web-plugins/mapps-io-admin-webiny-plugins::locator=mapps-io-webiny%40workspace%3A.":
+"mapps-io-admin-webiny-plugins@portal:/C:/Repos/Private/mapps-io-web/apps/mapps-io-web-plugins/mapps-io-admin-webiny-plugins::locator=mapps-io-webiny%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "mapps-io-admin-webiny-plugins@portal:/C:/Programowanie/Private/mapps-io-project/mapps-io-webiny/mapps-io-webiny/apps/mapps-io-web-plugins/mapps-io-admin-webiny-plugins::locator=mapps-io-webiny%40workspace%3A."
+  resolution: "mapps-io-admin-webiny-plugins@portal:/C:/Repos/Private/mapps-io-web/apps/mapps-io-web-plugins/mapps-io-admin-webiny-plugins::locator=mapps-io-webiny%40workspace%3A."
   dependencies:
     "@babel/cli": ^7.10.4
     "@babel/core": 7.10.4
@@ -18038,9 +18038,9 @@ fsevents@^1.2.7:
   languageName: unknown
   linkType: soft
 
-"mapps-io-base-plugins@portal:/C:/Programowanie/Private/mapps-io-project/mapps-io-webiny/mapps-io-webiny/apps/mapps-io-web-plugins/mapps-io-base-plugins::locator=mapps-io-webiny%40workspace%3A.":
+"mapps-io-base-plugins@portal:/C:/Repos/Private/mapps-io-web/apps/mapps-io-web-plugins/mapps-io-base-plugins::locator=mapps-io-webiny%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "mapps-io-base-plugins@portal:/C:/Programowanie/Private/mapps-io-project/mapps-io-webiny/mapps-io-webiny/apps/mapps-io-web-plugins/mapps-io-base-plugins::locator=mapps-io-webiny%40workspace%3A."
+  resolution: "mapps-io-base-plugins@portal:/C:/Repos/Private/mapps-io-web/apps/mapps-io-web-plugins/mapps-io-base-plugins::locator=mapps-io-webiny%40workspace%3A."
   dependencies:
     "@babel/cli": ^7.10.4
     "@babel/core": 7.10.4
@@ -18218,9 +18218,9 @@ fsevents@^1.2.7:
   languageName: unknown
   linkType: soft
 
-"mapps-io-webiny-plugins@portal:/C:/Programowanie/Private/mapps-io-project/mapps-io-webiny/mapps-io-webiny/apps/mapps-io-web-plugins/mapps-io-webiny-plugins::locator=mapps-io-webiny%40workspace%3A.":
+"mapps-io-webiny-plugins@portal:/C:/Repos/Private/mapps-io-web/apps/mapps-io-web-plugins/mapps-io-webiny-plugins::locator=mapps-io-webiny%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "mapps-io-webiny-plugins@portal:/C:/Programowanie/Private/mapps-io-project/mapps-io-webiny/mapps-io-webiny/apps/mapps-io-web-plugins/mapps-io-webiny-plugins::locator=mapps-io-webiny%40workspace%3A."
+  resolution: "mapps-io-webiny-plugins@portal:/C:/Repos/Private/mapps-io-web/apps/mapps-io-web-plugins/mapps-io-webiny-plugins::locator=mapps-io-webiny%40workspace%3A."
   dependencies:
     "@babel/cli": ^7.10.4
     "@babel/core": 7.10.4
@@ -25989,9 +25989,9 @@ resolve@1.12.2:
   languageName: node
   linkType: hard
 
-"theme@portal:/C:/Programowanie/Private/mapps-io-project/mapps-io-webiny/mapps-io-webiny/apps/theme::locator=mapps-io-webiny%40workspace%3A.":
+"theme@portal:/C:/Repos/Private/mapps-io-web/apps/theme::locator=mapps-io-webiny%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "theme@portal:/C:/Programowanie/Private/mapps-io-project/mapps-io-webiny/mapps-io-webiny/apps/theme::locator=mapps-io-webiny%40workspace%3A."
+  resolution: "theme@portal:/C:/Repos/Private/mapps-io-web/apps/theme::locator=mapps-io-webiny%40workspace%3A."
   dependencies:
     "@apollo/react-components": ^3.1.5
     "@editorjs/editorjs": ^2.19.1

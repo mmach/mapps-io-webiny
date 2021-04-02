@@ -11,6 +11,8 @@ import pageBuilderPlugins from "./pageBuilder";
 import formBuilderPlugins from "./formBuilder";
 import headlessCmsPlugins from "./headlessCms";
 import theme from "theme";
+import * as MappsWebinyPluginsAdmin from "mapps-io-webiny-plugins/src/mappsAdminPluginSet.js";
+
 import WebinyAdminPlugins from "mapps-io-admin-webiny-plugins/src/index.js";
 import WebinyPlugins from "mapps-io-webiny-plugins/src/index.js";
 import WebinyPluginsRender from "mapps-io-webiny-plugins/src/render.js";
@@ -18,14 +20,11 @@ import * as MappsWebinyPlugins from "mapps-io-webiny-plugins/src/mappsPluginSet"
 import { MappsPlugins } from "mapps-io-base-plugins/src/plugins.js";
 import { mappsPlugins } from "mapps-io-base-plugins/src/index.js";
 import AdminPlugins from "mapps-io-admin-plugins/src/plugins.js";
-import * as MappsWebinyPluginsAdmin from "mapps-io-webiny-plugins/src/mappsAdminPluginSet.js";
 
-
-
+mappsPlugins.register(Object.values(MappsWebinyPluginsAdmin));
 mappsPlugins.register(Object.values(MappsPlugins));
 mappsPlugins.register(Object.values(MappsWebinyPlugins));
 mappsPlugins.register(Object.values(AdminPlugins));
-mappsPlugins.register(Object.values(MappsWebinyPluginsAdmin));
 
 plugins.register([
     /**
